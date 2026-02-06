@@ -1,7 +1,7 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3
 
-SRC = main.c file_setup.c
+SRC = main.c file_utils.c graphics_utils.c utils.c mfa_utils.c
 OBJ = $(SRC:.c=.o)
 NAME = retromfa
 MLXDIR = ./minilibx-linux
