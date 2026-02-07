@@ -1,10 +1,14 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g3
-
+CFLAGS = -Wall -Werror -Wextra -I./inc
+SRCDIR = src
 SRC = main.c file_utils.c graphics_utils.c utils.c mfa_utils.c surface_parser.c render.c
+SRCS = $(addprefix $(SRCDIR)/, $(SRC))
+
 OBJDIR = obj
-OBJ = $(addprefix $(OBJDIR)/, $(SRC:.c=.o))
+OBJ = $(addprefix $(OBJDIR)/, $(notdir $(SRCS:.c=.o)))
+
 NAME = retromfa
+
 MLXDIR = ./minilibx-linux
 MLXFLAGS = -L$(MLXDIR) -lmlx -lXext -lX11 -lm
 MLX = $(MLXDIR)/libmlx.a
@@ -17,7 +21,7 @@ $(MLX):
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
 
-$(OBJDIR)/%.o: %.c mfa.h | $(OBJDIR)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c inc/mfa.h | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ) $(MLX)

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 15:21:04 by abdsalah          #+#    #+#             */
-/*   Updated: 2026/02/07 09:52:56 by abdsalah         ###   ########.fr       */
+/*   Updated: 2026/02/07 10:01:30 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define MAX_SURFACES 20
 
-# include "minilibx-linux/mlx.h"
+# include "../minilibx-linux/mlx.h"
 # include <stdbool.h>
 # include <stdint.h>
 # include <stdio.h>
