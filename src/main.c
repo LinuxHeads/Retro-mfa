@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 15:01:22 by abdsalah          #+#    #+#             */
-/*   Updated: 2026/02/07 09:53:07 by abdsalah         ###   ########.fr       */
+/*   Updated: 2026/02/07 13:01:14 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	main(int argc, char const *argv[])
 		render_surface(&graphics, &surfaces[i], pos_x, pos_y);
 	}
 	/* Display the rendered image */
-	mlx_hook(graphics.win, 17, 0, (int (*)())((void *)close_window), &graphics);
-	mlx_key_hook(graphics.win, (int (*)())((void *)esc_close_window),
+	mlx_hook(graphics.win, 17, 0, close_window, &graphics);
+	mlx_key_hook(graphics.win, esc_close_window,
 		&graphics);
 	mlx_put_image_to_window(graphics.mlx, graphics.win, graphics.img, 0, 0);
 	mlx_loop(graphics.mlx);
