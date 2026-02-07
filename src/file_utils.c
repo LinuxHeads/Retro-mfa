@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 15:27:36 by abdsalah          #+#    #+#             */
-/*   Updated: 2026/02/07 09:53:15 by abdsalah         ###   ########.fr       */
+/*   Updated: 2026/02/07 13:02:39 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ FILE	*file_setup(const char *filename)
 
 	if (endswith(filename, ".mfa") == 0)
 	{
-		write(2, "Error: Invalid file type. Expected .mfa\n", 39);
+		write(2, "Error: Invalid file type. Expected .mfa\n", 40);
 		exit(1);
 	}
 	in = fopen(filename, "r");
